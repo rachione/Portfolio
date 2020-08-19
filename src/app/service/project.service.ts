@@ -9,12 +9,13 @@ import { callbackify } from 'util';
 })
 
 export class ProjectService {
-  valueChanges: Observable<any>
-  projects: any;
+  private valueChanges: Observable<any>
+  private projects: any;
   constructor(private router: Router, private firestore: AngularFirestore) {
     this.valueChanges = this.firestore.collection('projects', ref => ref.orderBy('order'))
       .valueChanges({ idField: 'id' })
   }
+  
   init(component) {
     if (!this.projects) {
       this.valueChanges.subscribe((p: any) => {
@@ -26,9 +27,6 @@ export class ProjectService {
     }
   }
 
-  getValueChanges() {
-    return this.valueChanges;
-  }
   setProjects(p: any) {
     this.projects = p;
   }
