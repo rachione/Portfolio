@@ -2,7 +2,7 @@ import { Component, OnDestroy } from '@angular/core';
 import { NbMenuItem } from '@nebular/theme';
 import { RouterOutlet } from '@angular/router';
 import { fader } from './route-animation';
-import { DataService } from './data-service';
+
 
 @Component({
   selector: 'app-root',
@@ -32,7 +32,7 @@ export class AppComponent{
       link: '/contact'
     }
   ];
-  constructor(public dataservice: DataService) {
+  constructor() {
   }
   // tslint:disable-next-line: typedef
   prepareRoute(outlet: RouterOutlet) {

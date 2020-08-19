@@ -11,11 +11,9 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'resume', component: ResumeComponent},
   { path: 'project', component: ProjectComponent },
-  { path: 'subproject', component: SubprojectComponent },
+  { path: 'subproject/:id', component: SubprojectComponent },
   { path: 'contact', component: ContactComponent },
   { path: '**', redirectTo: '/project' },
-
-
 ];
 
 @NgModule({

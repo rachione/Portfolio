@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
-import { DataService } from '../../data-service';
+import { ProjectService } from '../../service/project.service';
 
 
 @Component({
@@ -12,18 +12,15 @@ import { DataService } from '../../data-service';
 export class ProjectComponent implements OnInit {
 
   projects: any;
-  constructor(firestore: AngularFirestore, private router: Router, public dataservice: DataService) {
-    firestore.collection('projects', ref => ref.orderBy('order'))
-      .valueChanges({ idField: 'id' })
-      .subscribe((p: any) => {
-        this.projects = p;
-      });
+  constructor(private router: Router, public pService: ProjectService) {
+    pService.getProjects().subscribe((p: any) => {
+      this.projects = p;
+    });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
   navSub(id: string): void {
-    this.dataservice.project = this.projects.find((p: any) => p.id === id);
-    this.router.navigate(['subproject']);
+    this.router.navigate([`subproject/${id}`]);
   }
 
 }

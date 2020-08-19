@@ -17,7 +17,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { SubprojectComponent } from './page/subproject/subproject.component';
-import { DataService } from './data-service';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,7 @@ import { DataService } from './data-service';
     NbLayoutModule,
     NbEvaIconsModule
   ],
-  providers: [DataService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
