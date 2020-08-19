@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: 'project', component: ProjectComponent },
   { path: 'subproject', component: SubprojectComponent },
   { path: 'contact', component: ContactComponent },
+  { path: '**', redirectTo: '/project' },
 
 
 ];
