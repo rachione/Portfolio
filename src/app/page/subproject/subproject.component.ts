@@ -11,9 +11,11 @@ export class SubprojectComponent implements OnInit {
   projectId: string;
   project: any;
   constructor(private route: ActivatedRoute, public pService: ProjectService) {
-
     this.projectId = this.route.snapshot.params.id;
-    this.project = pService.getProject(this.projectId);
+    this.pService.init(this);
+  }
+  setData(): void{
+    this.project = this.pService.getProject(this.projectId);
   }
   ngOnInit(): void {
   }

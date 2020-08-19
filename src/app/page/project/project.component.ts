@@ -13,11 +13,11 @@ export class ProjectComponent implements OnInit {
 
   projects: any;
   constructor(private router: Router, public pService: ProjectService) {
-    pService.getProjects().subscribe((p: any) => {
-      this.projects = p;
-    });
+    this.pService.init(this);
   }
-
+  setData(): void {
+    this.projects = this.pService.getProjects();
+  }
   ngOnInit(): void { }
   navSub(id: string): void {
     this.router.navigate([`subproject/${id}`]);
