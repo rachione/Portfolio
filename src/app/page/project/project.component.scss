@@ -1,0 +1,15 @@
+:host ::ng-deep nb-card {
+  cursor: pointer;
+}
+:host ::ng-deep nb-card-body {
+  padding: 0;
+}
+
+[class*="col-"] {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.img-fluid {
+  width: 100%;
+}

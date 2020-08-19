@@ -1,0 +1,60 @@
+<div class="row  no-gutters">
+  <div class="col-md-3  d-none d-md-block ">
+    <nb-card>
+      <nb-card-header>
+        <h5>Best Game I've Played</h5>
+      </nb-card-header>
+
+      <nb-list class='bestGame'>
+        <nb-list-item class='bestGameList' *ngFor="let game of bestGameData">
+          {{ game }}
+        </nb-list-item>
+      </nb-list>
+
+    </nb-card>
+  </div>
+  <div class="col-md-9  col-sm-12">
+    <nb-card>
+      <nb-card-header>
+        <h5>About Me</h5>
+      </nb-card-header>
+      <nb-card-body>
+        {{aboutData.content}}
+      </nb-card-body>
+    </nb-card>
+    <nb-card>
+      <nb-card-header>
+        <h5>Skills</h5>
+      </nb-card-header>
+      <nb-card-body>
+        <div *ngFor="let columns of skillsData; last as isLast" class="row">
+          <div *ngFor="let item of columns" class="col-lg-6 ">
+            <div class=" text-center Skill_title" style="color:{{item.rgbcolor}};">{{item.title}}</div>
+
+            <div *ngFor="let skill of item.skills" class="col-lg-12 row no-gutters skill">
+              <p class="text-right col-sm-6 bold ">
+                <span class='tooltipSkill skillTitle_{{item.color}}' *ngIf="skill.tooltip!=null; else templateName"
+                  nbTooltip="{{skill.tooltip}}" nbTooltipPlacement="top">
+                  <nb-icon class='align-self-center ' [status]="item.color" icon="info-outline"></nb-icon>
+                  <span class='align-self-center'>{{skill.name}}</span>
+
+                </span>
+
+
+                <ng-template #templateName>
+                  <span class='align-self-center'>{{skill.name}}</span>
+                </ng-template>
+              </p>
+              <nb-progress-bar class="col-sm-6" size="tiny" [value]="skill.percent" [status]="item.color">
+              </nb-progress-bar>
+            </div>
+
+            <hr *ngIf="!isLast">
+          </div>
+
+        </div>
+      </nb-card-body>
+    </nb-card>
+
+  </div>
+</div>

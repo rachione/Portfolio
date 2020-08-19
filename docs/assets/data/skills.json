@@ -1,0 +1,149 @@
+[
+  [
+    {
+      "title": "Game Development",
+      "rgbcolor": "#3366ff",
+      "color": "primary",
+      "skills": [
+        {
+          "name": "Unity",
+          "percent": "99",
+          "tooltip": "Customize Unity Editor, DOTS, URP, Shader Graph, Cinemachine, Tilemap, NavMesh, MMD4Mecanim"
+        },
+        {
+          "name": "Script Optimization",
+          "percent": "85",
+          "tooltip": "Reducing GC Allocation, writing data-oriented design and cache-friendly code"
+        },
+        {
+          "name": "Engine Development",
+          "percent": "75",
+          "tooltip": "Collision Detection (Ray-AABB), Sandbox Development"
+        },
+        {
+          "name": "OpenGL",
+          "percent": "70"
+        }
+      ]
+    },
+    {
+      "title": "Cyber Security",
+      "rgbcolor": "#0095ff",
+      "color": "info",
+      "skills": [
+        {
+          "name": "Game Security",
+          "percent": "90",
+          "tooltip": "Making Game cheat, Anti-cheat, MOD"
+        },
+        {
+          "name": "Network Security",
+          "percent": "75",
+          "tooltip": "XSS, CSRF, SQL Injection, MITM"
+        },
+        {
+          "name": "Reverse Engineering",
+          "percent": "85",
+          "tooltip": "Cheat Engine, IDA Pro, GDB, Ghidra, x64dbg, ILSpy"
+        },
+        {
+          "name": "Cryptography",
+          "percent": "65",
+          "tooltip": "RSA, AES, Blockchain"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "title": "Front-End & Back-End",
+      "rgbcolor": "#ffaa00",
+      "color": "warning",
+      "skills": [
+        {
+          "name": "JavaScript",
+          "percent": "95",
+          "tooltip": "TypeScript, AngularJs, Node.js, jQuery, p5.js, React.js"
+        },
+        {
+          "name": "HTML / CSS",
+          "percent": "85",
+          "tooltip": "Chrome Extension Development, Bootstrap"
+        },
+        {
+          "name": "ASP.NET MVC 5",
+          "percent": "75"
+        },
+        {
+          "name": "SQL",
+          "percent": "60",
+          "tooltip": "IBM DB2, MSSQL, MySQL"
+        }
+      ]
+    },
+    {
+      "title": "Programming Language",
+      "rgbcolor": "#ff3d71",
+      "color": "danger",
+      "skills": [
+        {
+          "name": "Python",
+          "percent": "95"
+        },
+        {
+          "name": "C#",
+          "percent": "90",
+          "tooltip": "UnityEngine, Mono, ASP.NET MVC, Windows Forms"
+        },
+        {
+          "name": "C / C++",
+          "percent": "80"
+        },
+        {
+          "name": "Assembly",
+          "percent": "75",
+          "tooltip": "x86 / x64 Architecture, FASM, NASM"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "title": "Design",
+      "rgbcolor": "#00d68f",
+      "color": "success",
+      "skills": [
+        {
+          "name": "Paint Tool SAI",
+          "percent": "80"
+        },
+        {
+          "name": "Photoshop",
+          "percent": "50"
+        },
+        {
+          "name": "Aseprite",
+          "percent": "65"
+        }
+      ]
+    },
+    {
+      "title": "Other",
+      "color": "control",
+      "skills": [
+        {
+          "name": "WinAPI",
+          "percent": "80"
+        },
+        {
+          "name": "AI Development",
+          "percent": "60"
+        },
+        {
+          "name": "Git",
+          "percent": "65"
+        }
+      ]
+    }
+  ]
+]

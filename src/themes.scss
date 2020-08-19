@@ -1,0 +1,13 @@
+@import '~@nebular/theme/styles/theming';
+@import '~@nebular/theme/styles/themes/dark';
+
+$nb-themes: nb-register-theme((
+  header-padding:0px,
+  header-height:4rem,
+  card-margin-bottom: 20px,
+  layout-padding:0rem 0rem,
+  tooltip-text-font-size: 0.85rem,
+
+
+
+), dark, dark);

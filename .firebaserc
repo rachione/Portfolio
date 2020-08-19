@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "carter-yang-portfolio": {
+      "hosting": {
+        "portfolio": [
+          "carter-yang-portfolio"
+        ]
+      }
+    }
+  }
+}
