@@ -1,4 +1,4 @@
-<div class="row no-gutters">
+<div *ngIf=projects class="row no-gutters">
   <div *ngFor="let project of projects" class="col-sm-6 col-lg-4 col-xl-3 ">
     <nb-card (click)="navSub(project.id)">
       <nb-card-body>
