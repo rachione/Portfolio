@@ -15,7 +15,7 @@ export class ProjectService {
     this.valueChanges = this.firestore.collection('projects', ref => ref.orderBy('order'))
       .valueChanges({ idField: 'id' })
   }
-  
+
   init(component) {
     if (!this.projects) {
       this.valueChanges.subscribe((p: any) => {
@@ -24,6 +24,7 @@ export class ProjectService {
       });
     } else {
       component.setData();
+      
     }
   }
 
