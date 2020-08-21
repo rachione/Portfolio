@@ -8,17 +8,17 @@ import { Observable } from 'rxjs';
 })
 
 export class ProjectService {
-  private valueChanges: Observable<any>
+  private valueChanges: Observable<any>;
   private projects: any;
   constructor(private router: Router, private firestore: AngularFirestore) {
     this.valueChanges = this.firestore
       .collection('projects', ref => ref.orderBy('order'))
-      .valueChanges({ idField: 'id' })
+      .valueChanges({ idField: 'id' });
   }
 
-  init(component) {
+  init(component): void {
     if (!this.projects) {
-      let subscription = this.valueChanges.subscribe((p: any) => {
+      const subscription = this.valueChanges.subscribe((p: any) => {
         this.setProjects(p);
         component.setData();
         subscription.unsubscribe();
@@ -28,7 +28,7 @@ export class ProjectService {
     }
   }
 
-  setProjects(p: any) {
+  setProjects(p: any): void {
     this.projects = p;
   }
   getProjects(): any {
