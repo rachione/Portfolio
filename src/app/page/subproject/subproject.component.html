@@ -1,3 +1,45 @@
 <div *ngIf=project class="row no-gutters">
-  {{project.name}}
+  <div class="col-lg-12">
+    <nb-card>
+      <nb-card-header>
+        <button class="btn btn-outline-success" type="button"><nb-icon icon="arrow-back-outline"></nb-icon>BACK</button>
+        <h4>{{project.name}}</h4>
+      </nb-card-header>
+      <nb-card-body>
+        <div class="row no-gutters margin-back">
+          <div class="col-md-6">
+            <div class="lc-gallery">
+              <div class="row no-gutters">
+                <div *ngFor="let thumbnail of project.thumbnails;let isFirst = first; let i = index"
+                  [ngClass]="{'col-12': isFirst, 'col-4': !isFirst}">
+                  <div class="lightbox" (click)="openModal();currentSlide(i+1)">
+                    <img src={{thumbnail}} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <span class="ng-star-inserted"><strong>Date:</strong> 10/2016 - 06/2017 </span>
+            <span class="ng-star-inserted"><strong>Date:</strong> 10/2016 - 06/2017 </span>
+            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+          </div>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+
+<div *ngIf=project id='bigImg'>
+  <div class="bigImg-container">
+    <span class="close cursor" (click)="closeModal()">&times;</span>
+    <div class="slide-modal-content">
+      <div class="img-slides" *ngFor="let thumbnail of project.thumbnails; let i = index">
+        <img class="image-fullscreen" src="{{thumbnail}}" />
+      </div>
+      <a class="prev" (click)="plusSlides(-1)">&#10094;</a>
+      <a class="next" (click)="plusSlides(1)">&#10095;</a>
+    </div>
+    <div class="click-area" (click)="closeModal()"></div>
+  </div>
 </div>
