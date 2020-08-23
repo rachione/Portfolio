@@ -9,7 +9,7 @@ import { SubprojectComponent } from './page/subproject/subproject.component';
 const routes: Routes = [
   { path: '', redirectTo: '/project', pathMatch: 'full' },
   { path: 'about', component: AboutComponent },
-  { path: 'resume', component: ResumeComponent},
+  { path: 'resume', component: ResumeComponent },
   { path: 'project', component: ProjectComponent },
   { path: 'subproject/:id', component: SubprojectComponent },
   { path: 'contact', component: ContactComponent },
@@ -17,7 +17,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

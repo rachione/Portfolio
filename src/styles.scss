@@ -8,17 +8,20 @@
   @include nb-bootstrap-global();
 }
 
+body {
+  background-color: #151a30 !important;
+}
 
-.scrollable-container{
+.scrollable-container {
   overflow-x: hidden !important;
 }
+
 .layout {
   width: 100vw;
- 
+
+
 }
 
 
 /* Importing Bootstrap SCSS file. */
 @import "~bootstrap/scss/bootstrap";
-
-
