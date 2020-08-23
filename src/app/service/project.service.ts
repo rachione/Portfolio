@@ -32,7 +32,9 @@ export class ProjectService {
     this.projects = p;
   }
   getProjects(): any {
-    return this.projects;
+    return this.projects.map(x => {
+      return { id: x.id, name: x.name };
+    });
   }
   getProject(id: string): any {
     return this.projects.find(p => p.id === id);

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProjectService } from '../../service/project.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-subproject',
@@ -11,7 +12,7 @@ export class SubprojectComponent implements OnInit {
   projectId: string;
   project: any;
   slideIndex = 0;
-  constructor(private route: ActivatedRoute, public pService: ProjectService) {
+  constructor(private router: Router, private route: ActivatedRoute, public pService: ProjectService) {
     this.projectId = this.route.snapshot.params.id;
     this.pService.init(this);
   }
@@ -48,5 +49,16 @@ export class SubprojectComponent implements OnInit {
     }
     slides[this.slideIndex - 1].style.display = 'block';
 
+  }
+  previousProject(): void {
+
+
+  }
+  nextProject(): void {
+
+  }
+
+  backToMenu(): void {
+    this.router.navigate([`project`]);
   }
 }
