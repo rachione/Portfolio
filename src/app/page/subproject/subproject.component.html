@@ -2,9 +2,8 @@
 
   <div class="col-xl-10 ">
     <nb-card id="main-card">
-      <nb-card-header>
-        <h4 id="project_title" >{{project.name}}</h4>
-
+      <nb-card-header >
+        <h4 id="project_title">{{project.name}}</h4>
       </nb-card-header>
       <nb-card-body>
         <div class="row no-gutters margin-back">
@@ -12,51 +11,49 @@
 
             <div class="lc-gallery">
               <div class="row no-gutters">
-                <div *ngFor="let thumbnail of project.thumbnails;let isFirst = first; let i = index"
+                <div *ngFor="let item of [].constructor(4);let isFirst = first; let i = index"
                   [ngClass]="{'col-12': isFirst, 'col-4': !isFirst}">
                   <div class="lightbox" (click)="openModal();currentSlide(i+1)">
-                    <img src={{thumbnail}} />
+                    <img [src]="getThumb(i)" />
                   </div>
                 </div>
               </div>
             </div>
+
           </div>
           <div id="lc_details" class="col-lg-4">
             <div class='lc_container'>
-
-              <div >
-                <h6>Details</h6>
+              <div>
                 <nb-card class="no-padding">
                   <nb-card-body>
                     <div class="lc_small-crad">
+                      <div *ngIf=project.outline class="lc_outline">{{project.outline}}</div>
                       <div *ngFor="let info of project.infos" class="row no-gutters">
                         <span class="text-left col-lg-4  col-md-6 col-6 "><strong>{{info.title}}</strong></span>
                         <span class="col-lg-8 col-6">{{info.desc}}</span>
                       </div>
-                    </div>
-                  </nb-card-body>
-                </nb-card>
-              </div>
-
-              <div >
-                <h6>Team Members</h6>
-                <nb-card>
-                  <nb-card-body>
-                    <div class="lc_small-crad">
-                      <div *ngFor="let member of project.members" class="row no-gutters">
-                        <span class="text-left col-lg-4 col-md-6 col-6"><strong>{{member.name}}</strong></span>
-                        <span class="col-lg-8 col-md-6 col-6">{{member.role}}</span>
+                      <div id="lc_tag">
+                        <div *ngFor="let tag of project.tags">{{tag}}</div>
+                      </div>
+                      <div *ngIf=project.members >
+                        <h6 class='small-title'>Team Members</h6>
+                        <div *ngFor="let member of project.members" class="row no-gutters">
+                          <span class="text-left col-lg-4 col-md-6 col-6"><strong>{{member.name}}</strong></span>
+                          <span class="col-lg-8 col-md-6 col-6">{{member.role}}</span>
+                        </div>
                       </div>
                     </div>
                   </nb-card-body>
                 </nb-card>
               </div>
+
+
               <div id="btn-actions" class=" btn-group mt-auto" role="group">
-                <button type="button" class="btn btn-outline-success btn-sm">
+                <button type="button" class="btn btn-outline-success btn-sm" (click)="previousProject()">
                   <nb-icon class='back-icon' icon="arrow-back-outline">
                   </nb-icon>Previous
                 </button>
-                <button type="button" class="btn btn-outline-warning btn-sm"  (click)="backToMenu()" >
+                <button type="button" class="btn btn-outline-warning btn-sm" (click)="backToMenu()">
                   <nb-icon class='back-icon' icon="home-outline">
                   </nb-icon>Home
                 </button>
@@ -81,8 +78,8 @@
   <div class="bigImg-container">
     <span class="close cursor" (click)="closeModal()">&times;</span>
     <div class="slide-modal-content">
-      <div class="img-slides" *ngFor="let thumbnail of project.thumbnails; let i = index">
-        <img class="image-fullscreen" src="{{thumbnail}}" />
+      <div class="img-slides" *ngFor="let item of [].constructor(4);let i = index">
+        <img class="image-fullscreen" [src]="getThumb(i)" />
       </div>
       <a class="prev" (click)="plusSlides(-1)">&#10094;</a>
       <a class="next" (click)="plusSlides(1)">&#10095;</a>

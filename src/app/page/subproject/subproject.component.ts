@@ -15,7 +15,12 @@ export class SubprojectComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute, public pService: ProjectService) {
     this.projectId = this.route.snapshot.params.id;
     this.pService.init(this);
+
+    this.router.routeReuseStrategy.shouldReuseRoute = () => {
+      return false;
+    };
   }
+
   setData(): void {
     this.project = this.pService.getProject(this.projectId);
   }
@@ -51,14 +56,18 @@ export class SubprojectComponent implements OnInit {
 
   }
   previousProject(): void {
-
-
+    const previousId = this.pService.getPlusProjectId(this.projectId, -1);
+    this.router.navigate([`subproject/${previousId}`]);
   }
   nextProject(): void {
-
+    const nextId = this.pService.getPlusProjectId(this.projectId, 1);
+    this.router.navigate([`subproject/${nextId}`]);
   }
 
   backToMenu(): void {
     this.router.navigate([`project`]);
+  }
+  getThumb(index): string {
+    return `assets/project/thumb/${this.projectId}_thumb_${index}.jpg`;
   }
 }

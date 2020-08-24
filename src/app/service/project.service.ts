@@ -39,5 +39,17 @@ export class ProjectService {
   getProject(id: string): any {
     return this.projects.find(p => p.id === id);
   }
+  getPlusProjectId(current_id: string, n: number): void {
+    let index = this.projects.findIndex(x => x.id === current_id);
+    index += n;
+    if (index >= this.projects.length) {
+      index = 0;
+    }
+    if (index < 0) {
+      index = this.projects.length - 1;
+    }
+    return this.projects[index].id;
+
+  }
 
 }

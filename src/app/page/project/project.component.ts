@@ -21,5 +21,8 @@ export class ProjectComponent implements OnInit {
   navSub(id: string): void {
     this.router.navigate([`subproject/${id}`]);
   }
+  getCover(id): string {
+    return `assets/project/cover/${id}_cover.jpg`;
+  }
 
 }

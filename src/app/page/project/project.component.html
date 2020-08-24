@@ -2,7 +2,7 @@
   <div *ngFor="let project of projects" class="col-sm-6 col-lg-4 col-xl-3 ">
     <nb-card (click)="navSub(project.id)">
       <nb-card-body [attr.data-content]="project.name" >
-        <img class="img-fluid rounded"  onerror="this.src='https://via.placeholder.com/400x300'" src="assets/project/cover/{{project.id}}_cover.jpg">
+        <img class="img-fluid rounded"  onerror="this.src='https://via.placeholder.com/400x300'" [src]="getCover(project.id)">
 
       </nb-card-body>
     </nb-card>
