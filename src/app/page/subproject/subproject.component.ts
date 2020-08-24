@@ -27,6 +27,7 @@ export class SubprojectComponent implements OnInit {
   }
   ngOnInit(): void {
   }
+  //big Image
   openModal(): void {
     document.getElementById('bigImg').style.display = 'block';
   }
@@ -56,6 +57,14 @@ export class SubprojectComponent implements OnInit {
     slides[this.slideIndex - 1].style.display = 'block';
 
   }
+  getThumb(index): string {
+    return `assets/project/thumb/${this.projectId}_thumb_${index}.jpg`;
+  }
+
+  getVideo(): string {
+    return `https://www.youtube.com/embed/${this.project.demoVideo}?rel=0`;
+  }
+  //router
   previousProject(): void {
     const previousId = this.pService.getPlusProjectId(this.projectId, -1);
     this.router.navigate([`subproject/${previousId}`]);
@@ -64,15 +73,8 @@ export class SubprojectComponent implements OnInit {
     const nextId = this.pService.getPlusProjectId(this.projectId, 1);
     this.router.navigate([`subproject/${nextId}`]);
   }
-
   backToMenu(): void {
     this.router.navigate([`project`]);
   }
-  getThumb(index): string {
-    return `assets/project/thumb/${this.projectId}_thumb_${index}.jpg`;
-  }
 
-  getVideo(): string {
-    return `https://www.youtube.com/embed/${this.project.demoVideo}?rel=0`;
-  }
 }
