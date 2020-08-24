@@ -2,7 +2,7 @@
 
   <div class="col-xl-10 ">
     <nb-card id="main-card">
-      <nb-card-header >
+      <nb-card-header>
         <h4 id="project_title">{{project.name}}</h4>
       </nb-card-header>
       <nb-card-body>
@@ -13,13 +13,16 @@
               <div class="row no-gutters">
                 <div *ngFor="let item of [].constructor(4);let isFirst = first; let i = index"
                   [ngClass]="{'col-12': isFirst, 'col-4': !isFirst}">
-                  <div class="lightbox" (click)="openModal();currentSlide(i+1)">
+                  <div *ngIf=isFirst&&project.demoVideo class='embed-responsive embed-responsive-16by9'>
+                    <iframe class='embed-responsive-item' [src]="getVideo()|safe" scrolling="no" frameborder="0"
+                      allowfullscreen></iframe>
+                  </div>
+                  <div *ngIf=!isFirst||!project.demoVideo class="lightbox" (click)="openModal();currentSlide(i+1)">
                     <img [src]="getThumb(i)" />
                   </div>
                 </div>
               </div>
             </div>
-
           </div>
           <div id="lc_details" class="col-lg-4">
             <div class='lc_container'>
@@ -35,7 +38,7 @@
                       <div id="lc_tag">
                         <div *ngFor="let tag of project.tags">{{tag}}</div>
                       </div>
-                      <div *ngIf=project.members >
+                      <div *ngIf=project.members>
                         <h6 class='small-title'>Team Members</h6>
                         <div *ngFor="let member of project.members" class="row no-gutters">
                           <span class="text-left col-lg-4 col-md-6 col-6"><strong>{{member.name}}</strong></span>
@@ -78,8 +81,15 @@
   <div class="bigImg-container">
     <span class="close cursor" (click)="closeModal()">&times;</span>
     <div class="slide-modal-content">
-      <div class="img-slides" *ngFor="let item of [].constructor(4);let i = index">
-        <img class="image-fullscreen" [src]="getThumb(i)" />
+      <div *ngIf=!project.demoVideo>
+        <div class="img-slides" *ngFor="let item of [].constructor(4);let i = index">
+          <img class="image-fullscreen" [src]="getThumb(i)" />
+        </div>
+      </div>
+      <div *ngIf=project.demoVideo>
+        <div class="img-slides" *ngFor="let item of [].constructor(3);let i = index">
+          <img class="image-fullscreen" [src]="getThumb(i+1)" />
+        </div>
       </div>
       <a class="prev" (click)="plusSlides(-1)">&#10094;</a>
       <a class="next" (click)="plusSlides(1)">&#10095;</a>

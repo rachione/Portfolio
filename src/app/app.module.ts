@@ -17,6 +17,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { SubprojectComponent } from './page/subproject/subproject.component';
+import { SafePipe } from './service/pipe';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { SubprojectComponent } from './page/subproject/subproject.component';
     ProjectComponent,
     ContactComponent,
     SubprojectComponent,
+    SafePipe
 
   ],
   imports: [

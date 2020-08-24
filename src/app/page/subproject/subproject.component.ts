@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ProjectService } from '../../service/project.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-subproject',
   templateUrl: './subproject.component.html',
@@ -69,5 +70,9 @@ export class SubprojectComponent implements OnInit {
   }
   getThumb(index): string {
     return `assets/project/thumb/${this.projectId}_thumb_${index}.jpg`;
+  }
+
+  getVideo(): string {
+    return `https://www.youtube.com/embed/${this.project.demoVideo}?rel=0`;
   }
 }
