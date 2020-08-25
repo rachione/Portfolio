@@ -17,7 +17,7 @@
                     <iframe class='embed-responsive-item' [src]="getVideo()|safe" scrolling="no" frameborder="0"
                       allowfullscreen></iframe>
                   </div>
-                  <div *ngIf=!isFirst||!project.demoVideo class="lightbox" (click)="openModal();currentSlide(i+1)">
+                  <div *ngIf=!isFirst||!project.demoVideo class="lightbox" (click)="openModal();currentSlide(i)">
                     <img [src]="getThumb(i)" />
                   </div>
                 </div>
@@ -48,6 +48,12 @@
                     </div>
                   </nb-card-body>
                 </nb-card>
+                <button *ngIf=project.link type="button" class="btn btn-outline-info btn-sm" (click)="goToLink()" >
+                  <nb-icon class='back-icon' icon="attach-outline">
+                  </nb-icon>
+                  {{getLinkText()}}
+                </button>
+
               </div>
 
 

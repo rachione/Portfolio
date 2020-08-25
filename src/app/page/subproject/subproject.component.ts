@@ -76,5 +76,11 @@ export class SubprojectComponent implements OnInit {
   backToMenu(): void {
     this.router.navigate([`project`]);
   }
+  goToLink(): void {
+    window.open(this.project.link, "_blank");
+  }
+  getLinkText(): string {
+    return (this.project.linkType) ? this.project.linkType : 'download';
+  }
 
 }
