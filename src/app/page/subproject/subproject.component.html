@@ -30,7 +30,10 @@
                 <nb-card class="no-padding">
                   <nb-card-body>
                     <div class="lc_small-crad">
-                      <div *ngIf=project.outline class="lc_outline">{{project.outline}}</div>
+                      <div *ngIf=project.outline class="lc_outline">
+                        <div *ngFor="let outline of project.outline" >{{outline}}</div>
+                      </div>
+
                       <div *ngFor="let info of project.infos" class="row no-gutters">
                         <span class="text-left col-lg-4  col-md-6 col-6 "><strong>{{info.title}}</strong></span>
                         <span class="col-lg-8 col-6">{{info.desc}}</span>
