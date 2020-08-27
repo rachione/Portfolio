@@ -56,7 +56,11 @@
                   </nb-icon>
                   {{getLinkText()}}
                 </button>
-
+                <button *ngIf=project.SCLink style="margin-left: 5px;" type="button" class="btn btn-outline-info btn-sm" (click)="goToSCLink()" >
+                  <nb-icon class='back-icon' icon="attach-outline">
+                  </nb-icon>
+                  Source Code
+                </button>
               </div>
 
 
