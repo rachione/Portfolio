@@ -4,6 +4,10 @@
   padding-left: 10px;
 }
 
+.no-scrollbar {
+  overflow: hidden !important;
+}
+
 .lc_small-crad [class*=col-] {
   padding-right: 0px;
   padding-left: 0px;
@@ -25,8 +29,8 @@
 
 @font-face {
   font-family: "Glyphicons Halflings";
-  src: url("/assets/fonts/glyphicons-halflings-regular.eot");
-  src: url("/assets/fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/glyphicons-halflings-regular.woff2") format("woff2"), url("/assets/fonts/glyphicons-halflings-regular.woff") format("woff"), url("/assets/fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("/assets/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg");
+  src: url("^assets/fonts/glyphicons-halflings-regular.eot");
+  src: url("^assets/fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("^assets/fonts/glyphicons-halflings-regular.woff2") format("woff2"), url("^assets/fonts/glyphicons-halflings-regular.woff") format("woff"), url("^assets/fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("^assets/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg");
 }
 /*-----------------------------*/
 .lc-gallery .row > div {
@@ -251,4 +255,57 @@ img {
   #btn-actions {
     float: left;
   }
+}
+#lc_tag {
+  display: flex;
+  padding-inline-start: 0;
+  margin-top: 10px;
+  margin-bottom: -5px;
+  flex-wrap: wrap;
+}
+#lc_tag > * {
+  font-size: 0.75rem;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  text-transform: none;
+  background-color: rgba(0, 214, 143, 0.08);
+  border-color: #00d68f;
+  color: #00d68f;
+  padding: 0.3125rem 0.625rem;
+  border-style: solid;
+  border-width: 0.0625rem;
+  border-radius: 1.5rem;
+  line-height: 0.75rem;
+  font-family: Open Sans, sans-serif;
+  font-weight: 700;
+}
+
+.lc_outline {
+  margin-bottom: 10px;
+}
+
+.lc_outline > div:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.small-title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+  font-weight: bold;
+  background-color: rgba(255, 170, 0, 0.08);
+  border-color: #ffaa00;
+  color: #ffaa00;
+  text-align: center;
+}
+
+.mobile_img {
+  position: relative;
+  padding-bottom: 56.2%;
+}
+.mobile_img img {
+  position: absolute !important;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
