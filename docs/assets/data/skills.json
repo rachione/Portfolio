@@ -88,7 +88,8 @@
       "skills": [
         {
           "name": "Python",
-          "percent": "95"
+          "percent": "95",
+          "tooltip": "Programming Z3, Kivy, CTF stuff"
         },
         {
           "name": "C#",
