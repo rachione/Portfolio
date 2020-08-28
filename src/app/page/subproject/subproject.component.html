@@ -18,7 +18,11 @@
                       allowfullscreen></iframe>
                   </div>
                   <div *ngIf=!isFirst||!project.demoVideo class="lightbox" (click)="openModal();currentSlide(i)">
-                    <img [src]="getThumb(i)" />
+                    <img *ngIf=!project.isMobile [src]="getThumb(i)" />
+                    <div *ngIf=project.isMobile class="mobile_img">
+                      <img [src]="getThumb(i)" />
+                    </div>
+
                   </div>
                 </div>
               </div>
@@ -31,7 +35,7 @@
                   <nb-card-body>
                     <div class="lc_small-crad">
                       <div *ngIf=project.outline class="lc_outline">
-                        <div *ngFor="let outline of project.outline" >{{outline}}</div>
+                        <div *ngFor="let outline of project.outline">{{outline}}</div>
                       </div>
 
                       <div *ngFor="let info of project.infos" class="row no-gutters">
@@ -51,12 +55,13 @@
                     </div>
                   </nb-card-body>
                 </nb-card>
-                <button *ngIf=project.link type="button" class="btn btn-outline-info btn-sm" (click)="goToLink()" >
+                <button *ngIf=project.link type="button" class="btn btn-outline-info btn-sm" (click)="goToLink()">
                   <nb-icon class='back-icon' icon="attach-outline">
                   </nb-icon>
                   {{getLinkText()}}
                 </button>
-                <button *ngIf=project.SCLink style="margin-left: 5px;" type="button" class="btn btn-outline-info btn-sm" (click)="goToSCLink()" >
+                <button *ngIf=project.SCLink style="margin-left: 5px;" type="button" class="btn btn-outline-info btn-sm"
+                  (click)="goToSCLink()">
                   <nb-icon class='back-icon' icon="attach-outline">
                   </nb-icon>
                   Source Code
