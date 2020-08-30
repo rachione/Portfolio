@@ -18,6 +18,8 @@
                       allowfullscreen></iframe>
                   </div>
                   <div *ngIf=!isFirst||!project.demoVideo class="lightbox" (click)="openModal();currentSlide(i)">
+                    <nb-icon  icon="maximize-outline">
+                    </nb-icon>
                     <img *ngIf=!project.isMobile [src]="getThumb(i)" />
                     <div *ngIf=project.isMobile class="mobile_img">
                       <img [src]="getThumb(i)" />

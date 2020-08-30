@@ -18,6 +18,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { SubprojectComponent } from './page/subproject/subproject.component';
 import { SafePipe } from './service/pipe';
+import { PdfViewerModule ,PdfViewerComponent } from 'ng2-pdf-viewer';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { SafePipe } from './service/pipe';
     AppRoutingModule,
     BrowserAnimationsModule,
     NbThemeModule.forRoot({ name: 'dark' }),
+    PdfViewerModule,
     NbPopoverModule,
     NbButtonModule,
     NbListModule,
@@ -52,7 +54,7 @@ import { SafePipe } from './service/pipe';
     NbLayoutModule,
     NbEvaIconsModule
   ],
-  providers: [],
+  providers: [PdfViewerComponent ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

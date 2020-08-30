@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./resume.component.scss']
 })
 export class ResumeComponent implements OnInit {
-
+  pdfSrc = '/assets/Resume.pdf'
   constructor() { }
 
   ngOnInit(): void {
   }
+
 
 }
