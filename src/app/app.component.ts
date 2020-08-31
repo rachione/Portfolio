@@ -27,10 +27,11 @@ export class AppComponent{
       title: 'Resume',
       link: '/resume'
     },
+    /*
     {
       title: 'Contact',
       link: '/contact'
-    }
+    }*/
   ];
   constructor() {
   }
