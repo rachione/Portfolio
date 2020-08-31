@@ -11,6 +11,7 @@ export class ResumeComponent implements OnInit {
   constructor(platformLocation: PlatformLocation) {
     let origin = (platformLocation as any).location.origin;
     this.pdfSrc = `${origin}/assets/Resume.pdf`;
+    console.log(this.pdfSrc)
   }
 
   ngOnInit(): void {
