@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlatformLocation } from '@angular/common';
 
 @Component({
   selector: 'app-resume',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./resume.component.scss']
 })
 export class ResumeComponent implements OnInit {
-  pdfSrc = './assets/Resume.pdf'
-  constructor() { }
+  pdfSrc = "";
+  constructor(platformLocation: PlatformLocation) {
+    let origin = (platformLocation as any).location.origin;
+    this.pdfSrc = `${origin}/assets/Resume.pdf`;
+  }
 
   ngOnInit(): void {
   }
