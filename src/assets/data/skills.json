@@ -89,7 +89,7 @@
         {
           "name": "Python",
           "percent": "95",
-          "tooltip": "Programming Z3, Kivy, CTF stuff"
+          "tooltip": "Programming Z3, Kivy, Jupyter, CTF stuff"
         },
         {
           "name": "C#",
