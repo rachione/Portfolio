@@ -8,7 +8,7 @@
         {
           "name": "Unity",
           "percent": "99",
-          "tooltip": "Customize Unity Editor, DOTS, URP, Shader Graph, Cinemachine, Tilemap, NavMesh, MMD4Mecanim"
+          "tooltip": "Customize Unity Editor, DOTS, URP, Shader Graph, Cinemachine, Tilemap, MMD4Mecanim"
         },
         {
           "name": "Script Optimization",
@@ -63,7 +63,7 @@
         {
           "name": "JavaScript",
           "percent": "95",
-          "tooltip": "TypeScript, AngularJs, Node.js, jQuery, p5.js, React.js"
+          "tooltip": "TypeScript, AngularJs, Node.js, jQuery"
         },
         {
           "name": "HTML / CSS",
@@ -123,6 +123,10 @@
           "percent": "70"
         },
         {
+          "name": "Adobe Photoshop",
+          "percent": "60"
+        },
+        {
           "name": "Aseprite",
           "percent": "60"
         }
@@ -135,6 +139,10 @@
         {
           "name": "WinAPI",
           "percent": "80"
+        },
+        {
+          "name": "OpenCV",
+          "percent": "70"
         },
         {
           "name": "AI Development",
