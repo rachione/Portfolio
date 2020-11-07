@@ -137,16 +137,16 @@
       "color": "control",
       "skills": [
         {
+          "name": "Code Refactoring",
+          "percent": "95"
+        },
+        {
           "name": "WinAPI",
           "percent": "80"
         },
         {
-          "name": "OpenCV",
-          "percent": "70"
-        },
-        {
           "name": "AI Development",
-          "percent": "60"
+          "percent": "65"
         },
         {
           "name": "Linux/Unix Administration",
