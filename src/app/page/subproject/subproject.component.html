@@ -56,16 +56,16 @@
                     </div>
                   </nb-card-body>
                 </nb-card>
-                <button *ngIf=project.link type="button" class="btn btn-outline-info btn-sm" (click)="goToLink()">
+                <button *ngIf=project.link type="button" class="btn btn-info btn-sm " (click)="goToLink()">
                   <nb-icon class='back-icon' icon="attach-outline">
                   </nb-icon>
                   {{getLinkText()}}
                 </button>
-                <button *ngIf=project.SCLink style="margin-left: 5px;" type="button" class="btn btn-outline-info btn-sm"
+                <button *ngIf=project.SCLink style="margin-left: 5px;" type="button" class="btn btn-info btn-sm"
                   (click)="goToSCLink()">
                   <nb-icon class='back-icon' icon="attach-outline">
                   </nb-icon>
-                  Source Code
+                  SOURCE CODE
                 </button>
               </div>
 

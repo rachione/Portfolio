@@ -83,7 +83,7 @@ export class SubprojectComponent implements OnInit {
     window.open(this.project.SCLink, "_blank");
   }
   getLinkText(): string {
-    return (this.project.linkType) ? this.project.linkType : 'download';
+    return (this.project.linkType) ? this.project.linkType : 'DOWNLOAD';
   }
 
 }
