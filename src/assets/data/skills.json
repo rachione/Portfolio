@@ -13,7 +13,7 @@
         {
           "name": "Script Optimization",
           "percent": "85",
-          "tooltip": "Reducing GC Allocation, writing data-oriented design and cache-friendly code"
+          "tooltip": "Reducing GC Allocation, Writing data-oriented design and cache-friendly code"
         },
         {
           "name": "Engine Development",
@@ -34,7 +34,7 @@
         {
           "name": "Game Security",
           "percent": "90",
-          "tooltip": "Making Game cheat, Anti-cheat, MOD"
+          "tooltip": "Making Game Modifiers, Anti-cheat, MOD"
         },
         {
           "name": "Network Security",
@@ -49,7 +49,7 @@
         {
           "name": "Cryptography",
           "percent": "65",
-          "tooltip": "RSA, AES, Blockchain"
+          "tooltip": "RSA, Blockchain"
         }
       ]
     }
@@ -89,7 +89,7 @@
         {
           "name": "Python",
           "percent": "95",
-          "tooltip": "Programming Z3, Kivy, Jupyter, CTF stuff"
+          "tooltip": "Pygame, NumPy, Kivy, Jupyter, Programming Z3, CTF stuff"
         },
         {
           "name": "C#",
@@ -141,12 +141,12 @@
           "percent": "95"
         },
         {
-          "name": "WinAPI",
-          "percent": "80"
+          "name": "AI Development",
+          "percent": "75"
         },
         {
-          "name": "AI Development",
-          "percent": "65"
+          "name": "WinAPI",
+          "percent": "70"
         },
         {
           "name": "Linux/Unix Administration",
