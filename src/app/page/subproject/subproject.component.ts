@@ -39,7 +39,6 @@ export class SubprojectComponent implements OnInit {
     this.showSlides();
   }
   currentSlide(n): void {
-    console.log(n)
     this.slideIndex = n;
     this.showSlides();
   }
@@ -47,23 +46,41 @@ export class SubprojectComponent implements OnInit {
 
     const slides = document.getElementsByClassName('img-slides') as HTMLCollectionOf<HTMLElement>;
     var baseIndex = 1
+    var maxIndex = slides.length
     if (this.project.demoVideo == null) {
       baseIndex = 0;
+      maxIndex = slides.length - 1
     }
-    if (this.slideIndex > slides.length) {
+
+    if (this.slideIndex > maxIndex) {
       this.slideIndex = baseIndex;
     }
     if (this.slideIndex < baseIndex) {
-      this.slideIndex = slides.length;
+      this.slideIndex = maxIndex;
     }
     for (let i = 0; i < slides.length; i++) {
       slides[i].style.display = 'none';
     }
-    slides[this.slideIndex - baseIndex].style.display = 'block';
+    slides[this.slideIndex-baseIndex].style.display = 'block';
 
 
   }
-
+  getMediaLength() {
+    let mediaLength = this.project.mediaLength
+    if (mediaLength == null) {
+      return 4
+    } else {
+      return mediaLength;
+    }
+  }
+  getThumbClassName(): string {
+    let thumbClass = this.project.thumbClass
+    if (thumbClass == null) {
+      return 'ratio16vs9'
+    } else {
+      return thumbClass;
+    }
+  }
 
   getThumb(index): string {
     return `assets/project/thumb/${this.projectId}_thumb_${index}.jpg`;

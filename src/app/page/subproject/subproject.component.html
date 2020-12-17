@@ -11,20 +11,17 @@
 
             <div class="lc-gallery">
               <div class="row no-gutters">
-                <div *ngFor="let item of [].constructor(4);let isFirst = first; let i = index"
-                  [ngClass]="{'col-12': isFirst, 'col-4': !isFirst}">
+                <div *ngFor="let item of [].constructor(getMediaLength());let isFirst = first; let i = index"
+                  [ngClass]="{'col-12': isFirst&&project.demoVideo, 'col-4': !isFirst||!project.demoVideo}">
                   <div *ngIf=isFirst&&project.demoVideo class='embed-responsive embed-responsive-16by9'>
                     <iframe class='embed-responsive-item' [src]="getVideo()|safe" scrolling="no" frameborder="0"
                       allowfullscreen></iframe>
                   </div>
                   <div *ngIf=!isFirst||!project.demoVideo class="lightbox" (click)="openModal();currentSlide(i)">
-                    <nb-icon  icon="maximize-outline">
+                    <nb-icon icon="maximize-outline">
                     </nb-icon>
-                    <div *ngIf=project.is4vs3 class="ratio4vs3">
-                      <img  [src]="getThumb(i)" />
-                    </div>
-                    <div *ngIf=!project.is4vs3 class="ratio16vs9">
-                      <img  [src]="getThumb(i)" />
+                    <div [class]="getThumbClassName()">
+                      <img [src]="getThumb(i)" />
                     </div>
 
                   </div>
@@ -82,7 +79,8 @@
                   <nb-icon class='main-back-icon' icon="home-outline">
                   </nb-icon>Home
                 </button>
-                <button type="button" class="btn btn-outline-success btn-sm" (click)="nextProject()"> Next<nb-icon class='main-forward-icon' icon="arrow-forward-outline">
+                <button type="button" class="btn btn-outline-success btn-sm" (click)="nextProject()"> Next<nb-icon
+                    class='main-forward-icon' icon="arrow-forward-outline">
                   </nb-icon></button>
               </div>
             </div>
@@ -100,21 +98,24 @@
 
 <div *ngIf=project id='bigImg'>
   <div class="bigImg-container">
-    <span class="close cursor" (click)="closeModal()">&times;</span>
+    <span class="close" (click)="closeModal()">&#10006;</span>
     <div class="slide-modal-content">
       <div *ngIf=!project.demoVideo>
-        <div class="img-slides" *ngFor="let item of [].constructor(4);let i = index">
+        <div class="img-slides" *ngFor="let item of [].constructor(getMediaLength());let i = index">
           <img class="image-fullscreen" [src]="getThumb(i)" />
         </div>
       </div>
       <div *ngIf=project.demoVideo>
-        <div class="img-slides" *ngFor="let item of [].constructor(3);let i = index">
+        <div class="img-slides" *ngFor="let item of [].constructor(getMediaLength()-1);let i = index">
           <img class="image-fullscreen" [src]="getThumb(i+1)" />
         </div>
       </div>
-      <a class="prev" (click)="plusSlides(-1)">&#10094;</a>
-      <a class="next" (click)="plusSlides(1)">&#10095;</a>
+
     </div>
-    <div class="click-area" (click)="closeModal()"></div>
+
+    <div class="click-area" (click)="closeModal()">
+      <a class="prev" (click)="plusSlides(-1);$event.stopPropagation();">&#10094;</a>
+      <a class="next" (click)="plusSlides(1);$event.stopPropagation();">&#10095;</a>
+    </div>
   </div>
 </div>
