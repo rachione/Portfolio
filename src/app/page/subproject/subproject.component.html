@@ -20,8 +20,11 @@
                   <div *ngIf=!isFirst||!project.demoVideo class="lightbox" (click)="openModal();currentSlide(i)">
                     <nb-icon  icon="maximize-outline">
                     </nb-icon>
-                    <div class="ratio16vs9">
-                      <img [src]="getThumb(i)" />
+                    <div *ngIf=project.is4vs3 class="ratio4vs3">
+                      <img  [src]="getThumb(i)" />
+                    </div>
+                    <div *ngIf=!project.is4vs3 class="ratio16vs9">
+                      <img  [src]="getThumb(i)" />
                     </div>
 
                   </div>

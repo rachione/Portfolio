@@ -330,6 +330,16 @@ img {
   text-align: center;
 }
 
+.ratio4vs3{
+  position: relative;
+  padding-bottom: 75%;
+  img{
+    position: absolute !important;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
 
 .ratio16vs9{
   position: relative;

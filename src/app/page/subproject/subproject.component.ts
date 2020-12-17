@@ -39,24 +39,32 @@ export class SubprojectComponent implements OnInit {
     this.showSlides();
   }
   currentSlide(n): void {
+    console.log(n)
     this.slideIndex = n;
     this.showSlides();
   }
   showSlides(): void {
 
     const slides = document.getElementsByClassName('img-slides') as HTMLCollectionOf<HTMLElement>;
-    if (this.slideIndex > slides.length) {
-      this.slideIndex = 1;
+    var baseIndex = 1
+    if (this.project.demoVideo == null) {
+      baseIndex = 0;
     }
-    if (this.slideIndex < 1) {
+    if (this.slideIndex > slides.length) {
+      this.slideIndex = baseIndex;
+    }
+    if (this.slideIndex < baseIndex) {
       this.slideIndex = slides.length;
     }
     for (let i = 0; i < slides.length; i++) {
       slides[i].style.display = 'none';
     }
-    slides[this.slideIndex - 1].style.display = 'block';
+    slides[this.slideIndex - baseIndex].style.display = 'block';
+
 
   }
+
+
   getThumb(index): string {
     return `assets/project/thumb/${this.projectId}_thumb_${index}.jpg`;
   }
