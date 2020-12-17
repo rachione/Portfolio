@@ -1,7 +1,8 @@
 <div *ngIf=projects class="row no-gutters">
   <div *ngFor="let project of projects" class="col-sm-6 col-lg-4 col-xl-3 ">
     <nb-card (click)="navSub(project.id)">
-      <nb-card-body [attr.data-content]="project.name" >
+      <nb-card-body  >
+        <div class="projectTitle">{{project.name}}</div>
         <img class="img-fluid rounded"  onerror="this.src='https://via.placeholder.com/400x300'" [src]="getCover(project.id)">
 
       </nb-card-body>

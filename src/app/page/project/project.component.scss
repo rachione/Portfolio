@@ -7,39 +7,7 @@
   border-radius: 0.25rem;
 }
 
-:host ::ng-deep nb-card-body::after {
-  content: "\A";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8));
-  opacity: 0;
-  transition: all 0.3s;
-}
-:host ::ng-deep nb-card-body:hover::after {
-  opacity: 0.5;
-}
-:host ::ng-deep nb-card-body::before {
-  content: attr(data-content);
-  font-size: 1.15em;
-  font-weight: 300;
-  letter-spacing: 0.03rem;
-  position: absolute;
-  right: 0;
-  color: #fff;
-  z-index: 1;
-  bottom: 0;
-  padding: 1em;
-  padding-bottom: 0.75rem;
-  box-sizing: border-box;
-  opacity: 0;
-  transition: all 0.3s;
-}
-:host ::ng-deep nb-card-body:hover::before {
-  opacity: 1;
-}
+
 :host ::ng-deep nb-card-body img {
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -54,9 +22,32 @@
   -webkit-transform: scale(1.1, 1.1);
 }
 
+:host ::ng-deep nb-card-body:hover .projectTitle{
+  opacity: 1;
+  transition: all 0.3s;
+}
+
 [class*="col-"] {
   padding-right: 10px;
   padding-left: 10px;
+}
+
+.projectTitle{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  margin: 10px;
+  padding: 4.5px 8px 4.5px 8px;
+  z-index: 1;
+  background:rgba(0, 0, 0, 0.7);
+  border-radius: 3px;
+  opacity: 0;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s;
 }
 
 .img-fluid {
