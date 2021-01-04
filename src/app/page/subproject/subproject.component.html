@@ -12,7 +12,7 @@
             <div class="lc-gallery">
               <div class="row no-gutters">
                 <div *ngFor="let item of [].constructor(getMediaLength());let isFirst = first; let i = index"
-                  [ngClass]="{'col-12': isFirst&&project.demoVideo, 'col-4': !isFirst||!project.demoVideo}">
+                  [ngClass]="{'col-12': isFullWidth(isFirst), 'col-4': !isFullWidth(isFirst)}">
                   <div *ngIf=isFirst&&project.demoVideo class='embed-responsive embed-responsive-16by9'>
                     <iframe class='embed-responsive-item' [src]="getVideo()|safe" scrolling="no" frameborder="0"
                       allowfullscreen></iframe>

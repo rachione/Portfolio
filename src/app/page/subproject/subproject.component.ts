@@ -61,7 +61,7 @@ export class SubprojectComponent implements OnInit {
     for (let i = 0; i < slides.length; i++) {
       slides[i].style.display = 'none';
     }
-    slides[this.slideIndex-baseIndex].style.display = 'block';
+    slides[this.slideIndex - baseIndex].style.display = 'block';
 
 
   }
@@ -88,6 +88,10 @@ export class SubprojectComponent implements OnInit {
 
   getVideo(): string {
     return `https://www.youtube.com/embed/${this.project.demoVideo}?rel=0`;
+  }
+
+  isFullWidth(isFirst) {
+    return isFirst && this.project.noMainImage == null
   }
   //router
   previousProject(): void {
