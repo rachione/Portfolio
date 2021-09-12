@@ -1235,7 +1235,7 @@ ProjectService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineIn
 /*! exports provided: content, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"content\":\"Game Developer with 5 years of progressive experience, Cyber Security Engineer working on games and websites. Information Communication, Yuan-Ze University, Taiwan.\"}");
+module.exports = JSON.parse("{\"content\":\"Game Developer with 4 years of progressive experience, Cyber Security Engineer working on games and websites. Information Communication, Yuan-Ze University, Taiwan.\"}");
 
 /***/ }),
 
