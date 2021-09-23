@@ -63,7 +63,7 @@
         {
           "name": "JavaScript",
           "percent": "95",
-          "tooltip": "TypeScript, AngularJs, Node.js, jQuery"
+          "tooltip": "Angular (2+), TypeScript, D3.js, Node.js, jQuery"
         },
         {
           "name": "HTML / CSS",
@@ -89,7 +89,7 @@
         {
           "name": "Python",
           "percent": "95",
-          "tooltip": "Pygame, NumPy, Flask, Kivy, Jupyter, Programming Z3, CTF stuff"
+          "tooltip": "CTF, Pygame, NumPy, Flask, Kivy, Jupyter, Programming Z3"
         },
         {
           "name": "C#",
