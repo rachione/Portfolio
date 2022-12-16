@@ -83,8 +83,12 @@ export class SubprojectComponent implements OnInit {
   }
 
   getThumb(index): string {
-    return `assets/project/thumb/${this.projectId}_thumb_${index}.jpg`;
+    let ext='jpg'
+    if(this.project.imgtype && this.project.imgtype=='gif')
+      ext='gif'
+    return `assets/project/thumb/${this.projectId}_thumb_${index}.${ext}`;
   }
+
 
   getVideo(): string {
     return `https://www.youtube.com/embed/${this.project.demoVideo}?rel=0`;

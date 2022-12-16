@@ -22,7 +22,12 @@ export class ProjectComponent implements OnInit {
     this.router.navigate([`subproject/${id}`]);
   }
   getCover(id): string {
-    return `assets/project/cover/${id}_cover.jpg`;
+    let ext='jpg'
+    let project = this.pService.getProject(id);
+    if(project.imgtype=="gif"){
+      ext='gif'
+    }
+    return `assets/project/cover/${id}_cover.${ext}`;
   }
 
 }

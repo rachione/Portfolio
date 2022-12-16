@@ -564,7 +564,12 @@ class ProjectComponent {
         this.router.navigate([`subproject/${id}`]);
     }
     getCover(id) {
-        return `assets/project/cover/${id}_cover.jpg`;
+        let ext = 'jpg';
+        let project = this.pService.getProject(id);
+        if (project.imgtype == "gif") {
+            ext = 'gif';
+        }
+        return `assets/project/cover/${id}_cover.${ext}`;
     }
 }
 ProjectComponent.ɵfac = function ProjectComponent_Factory(t) { return new (t || ProjectComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_service_project_service__WEBPACK_IMPORTED_MODULE_2__["ProjectService"])); };
@@ -1016,7 +1021,10 @@ class SubprojectComponent {
         }
     }
     getThumb(index) {
-        return `assets/project/thumb/${this.projectId}_thumb_${index}.jpg`;
+        let ext = 'jpg';
+        if (this.project.imgtype && this.project.imgtype == 'gif')
+            ext = 'gif';
+        return `assets/project/thumb/${this.projectId}_thumb_${index}.${ext}`;
     }
     getVideo() {
         return `https://www.youtube.com/embed/${this.project.demoVideo}?rel=0`;
